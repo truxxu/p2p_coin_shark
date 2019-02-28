@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_155131) do
+ActiveRecord::Schema.define(version: 2019_02_28_101434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "loans", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.integer "min_amount"
+    t.integer "max_amount"
+    t.integer "interest_rate"
+    t.string "payment_frequency"
+    t.string "payment_period"
+    t.index ["user_id"], name: "index_loans_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.date "loan_start"
+    t.date "loan_end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "loan_id"
+    t.index ["loan_id"], name: "index_requests_on_loan_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +48,15 @@ ActiveRecord::Schema.define(version: 2019_02_27_155131) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "id_type"
+    t.integer "id_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "loans", "users"
+  add_foreign_key "requests", "loans"
+  add_foreign_key "requests", "users"
 end
