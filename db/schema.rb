@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_112820) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "loan_id"
+    t.integer "requested_amount"
     t.index ["loan_id"], name: "index_requests_on_loan_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_112820) do
     t.string "first_name"
     t.string "last_name"
     t.string "id_type"
-    t.integer "id_number"
+    t.string "id_number"
     t.string "city"
     t.string "address"
     t.float "latitude"
