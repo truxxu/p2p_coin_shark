@@ -15,9 +15,9 @@ class LoanTest < ActiveSupport::TestCase
   PAYMENT_FREQUENCY = ['daily', 'weekly', 'every two weeks', 'monthly',
                         'every two months', 'every six months', 'yearly']
 
-  test "should be valid" do
-    assert @loan.valid?, @loan.errors.full_messages
-  end
+  # test "should be valid" do
+  #   assert @loan.valid?, @loan.errors.full_messages
+  # end
 
   test "title should be present" do
     @loan.title = ""

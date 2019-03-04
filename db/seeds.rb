@@ -24,8 +24,8 @@ test_user2 = User.new(
   last_name: "Barreiro",
   email: "julian@gmail.com",
   password: "123456",
-  id_type: "Driver License",
-  id_number: "123AF234",
+  id_type: "Driver's License",
+  id_number: "123AF234a",
   city: "Hannover",
   address: "Gellertstr. 21"
 )
@@ -40,7 +40,7 @@ test_user3 = User.new(
   email: "leonardo@gmail.com",
   password: "123456",
   id_type: "Passport",
-  id_number: "123AF234",
+  id_number: "123AF234b",
   city: "Bogota",
   address: "Cl. 97 #71c 21"
 )
@@ -51,7 +51,7 @@ test_user3.save
 
 # Loans
 
-test_loan = Loan.create(
+test_loan = Loan.create!(
   title: "Loan King",
   description: "Medium-term loans with the lowest interest",
   user_id: test_user.id,
@@ -62,7 +62,7 @@ test_loan = Loan.create(
   payment_period: 6
 )
 
-test_loan2 = Loan.create(
+test_loan2 = Loan.create!(
   title: "Professional Money Lenders",
   description: "Need money fast? We can help you :^)",
   user_id: test_user2.id,
@@ -73,7 +73,7 @@ test_loan2 = Loan.create(
   payment_period: 1
 )
 
-test_loan3 = Loan.create(
+test_loan3 = Loan.create!(
   title: "Instacash",
   description: "Look no more, you have found the best deal",
   user_id: test_user3.id,
@@ -86,7 +86,7 @@ test_loan3 = Loan.create(
 
 # Requests
 
-test_request = Request.create(
+test_request = Request.create!(
   loan_start: "2019-03-15",
   loan_end: "2019-09-15",
   user_id: test_user.id,
@@ -94,7 +94,7 @@ test_request = Request.create(
   requested_amount: 650
 )
 
-test_request2 = Request.create(
+test_request2 = Request.create!(
   loan_start: "2019-03-15",
   loan_end: "2019-05-15",
   user_id: test_user2.id,
@@ -102,7 +102,7 @@ test_request2 = Request.create(
   requested_amount: 500
 )
 
-test_request3 = Request.create(
+test_request3 = Request.create!(
   loan_start: "2019-03-15",
   loan_end: "2019-04-15",
   user_id: test_user3.id,

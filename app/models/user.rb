@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :loans
   has_many :requests
-  # has_many :requests_as_owner, thorugh: :loans, source: :requests
+  #has_many :requests_as_owner, through: :loans, source: :requests
 
   ID_TYPE = ["Passport", "Driver's License", "Birth Certificate", "Permanent Resident Card"]
 
