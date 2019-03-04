@@ -4,10 +4,10 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(first_name: "Daniel",
                     last_name: "Trujillo",
-                    email: "daniel@gmail.com",
+                    email: "daniel@mail.com",
                     password: "123456",
                     id_type: "Passport",
-                    id_number: "123AF234",
+                    id_number: "123AF2DSFSD34",
                     city: "Paris",
                     address: "16 Villa Gaudelet",
                     photo: "image/upload/v1551461470/hpjnbp9mkcmjihjrxv3e.jpg")

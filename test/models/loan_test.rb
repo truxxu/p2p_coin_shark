@@ -2,19 +2,9 @@ require 'test_helper'
 
 class LoanTest < ActiveSupport::TestCase
   def method_name
-    @user = User.create(first_name: "Daniel",
-                    last_name: "Trujillo",
-                    email: "daniel@gmail.com",
-                    password: "123456",
-                    id_type: "Passport",
-                    id_number: "123AF234",
-                    city: "Paris",
-                    address: "16 Villa Gaudelet",
-                    photo: "image/upload/v1551461470/hpjnbp9mkcmjihjrxv3e.jpg")
-
-    @loan = Loan.create(title: "Professional Money Lenders",
+    @loan = Loan.new(title: "Professional Money Lenders",
                         description: "Need money fast? We can help you :^)",
-                        user_id: @user.id,
+                        user_id: 1,
                         min_amount: 100,
                         max_amount: 2000,
                         interest_rate: 20,
