@@ -13,10 +13,10 @@ class User < ApplicationRecord
   validates :first_name, presence: true, length: { minimum: 2 }
   validates :last_name, presence: true, length: { minimum: 2 }
   validates :id_type, presence: true, inclusion: { in: ID_TYPE }
-  validates :id_number, presence: true
+  validates :id_number, presence: true, uniqueness: true
   validates :address, presence: true
   validates :city, presence: true
-  # validates :photo, presence: true
+  validates :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 

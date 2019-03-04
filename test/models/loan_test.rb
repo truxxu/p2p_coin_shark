@@ -9,7 +9,8 @@ class LoanTest < ActiveSupport::TestCase
                     id_type: "Passport",
                     id_number: "123AF234",
                     city: "Paris",
-                    address: "16 Villa Gaudelet")
+                    address: "16 Villa Gaudelet",
+                    photo: "image/upload/v1551461470/hpjnbp9mkcmjihjrxv3e.jpg")
 
     @loan = Loan.create(title: "Professional Money Lenders",
                         description: "Need money fast? We can help you :^)",
