@@ -51,7 +51,7 @@ test_user3.save
 
 # Loans
 
-test_loan = Loan.new(
+test_loan = Loan.create(
   title: "Loan King",
   description: "Medium-term loans with the lowest interest",
   user_id: test_user.id,
@@ -59,10 +59,10 @@ test_loan = Loan.new(
   max_amount: 500,
   interest_rate: 1.2,
   payment_frequency: "monthly",
-  payment_period: 6,
+  payment_period: 6
 )
 
-test_loan2 = Loan.new(
+test_loan2 = Loan.create(
   title: "Professional Money Lenders",
   description: "Need money fast? We can help you :^)",
   user_id: test_user2.id,
@@ -70,10 +70,10 @@ test_loan2 = Loan.new(
   max_amount: 2000,
   interest_rate: 20,
   payment_frequency: "monthly",
-  payment_period: 1,
+  payment_period: 1
 )
 
-test_loan3 = Loan.new(
+test_loan3 = Loan.create(
   title: "Instacash",
   description: "Look no more, you have found the best deal",
   user_id: test_user3.id,
@@ -81,12 +81,12 @@ test_loan3 = Loan.new(
   max_amount: 1000,
   interest_rate: 3.5,
   payment_frequency: "monthly",
-  payment_period: 12,
+  payment_period: 12
 )
 
 # Requests
 
-test_request = Request.new(
+test_request = Request.create(
   loan_start: "2019-03-15",
   loan_end: "2019-09-15",
   user_id: test_user.id,
@@ -94,7 +94,7 @@ test_request = Request.new(
   requested_amount: 650
 )
 
-test_request2 = Request.new(
+test_request2 = Request.create(
   loan_start: "2019-03-15",
   loan_end: "2019-05-15",
   user_id: test_user2.id,
@@ -102,7 +102,7 @@ test_request2 = Request.new(
   requested_amount: 500
 )
 
-test_request3 = Request.new(
+test_request3 = Request.create(
   loan_start: "2019-03-15",
   loan_end: "2019-04-15",
   user_id: test_user3.id,
