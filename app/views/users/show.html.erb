@@ -1,0 +1,8 @@
+<h1>Welcome, <%= @user.first_name %></h1>
+
+<%= cl_image_tag(@user.photo, width: 150, height: 150, crop: :thumb, gravity: :face) %>
+<p><span>Name:</span> <%= @user.first_name %> <%= @user.last_name %></p>
+<p><span>Identification:</span> <%= @user.id_type %></p>
+<p><span>Number:</span> <%= @user.id_number %></p>
+<p><span>Email:</span> <%= @user.email %></p>
+<p><span>Address:</span> <%= @user.address %>, <%= @user.city %></p>
