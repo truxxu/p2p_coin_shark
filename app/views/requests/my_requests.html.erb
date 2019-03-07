@@ -1,0 +1,6 @@
+<h2> My Loan Requests</h2>
+<% @requests.each do |request| %>
+  <p><span>Amount: </span><%= request.requested_amount %></p>
+  <p><span>From: </span><%= request.loan_start %> <span>To: <%= request.loan_end %></span></p>
+  <%= link_to "Details", loan_request_path(request.loan_id, request.id)  %>
+<% end %>

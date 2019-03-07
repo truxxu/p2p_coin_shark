@@ -1,0 +1,12 @@
+<h1>My Loans</h1>
+<hr>
+<% @loans.each do |loan| %>
+  <h2><%= loan.title %></h2>
+  <p><%= loan.description %></p>
+  <p><span>Limits: </span>$<%= loan.min_amount %> - $<%= loan.max_amount %> USD</p>
+  <p><span>Interest: </span><%= loan.interest_rate %>%</p>
+  <p><span>Payments: </span><%= loan.payment_frequency %></p>
+  <p><span>Lending period: </span> <%= loan.payment_period %> month(s)</p>
+  <p><span>Requests: </span><%= @requests.count %></p>
+  <%= link_to "Details", loan_path(loan.id) %>
+<% end %>
