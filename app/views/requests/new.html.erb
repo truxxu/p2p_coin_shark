@@ -1,0 +1,7 @@
+<%= simple_form_for [@loan, @request] do |f| %>
+  <%= f.input :requested_amount %>
+  <%= f.input :loan_start %>
+  <%= f.input :loan_end %>
+  <%= f.button :submit, class: "btn-gradient" %>
+<% end %>
+
