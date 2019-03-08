@@ -5,3 +5,4 @@
 <p><span>Payments: </span><%= @loan.payment_frequency %></p>
 <p><span>Lending period: </span> <%= @loan.payment_period %> month(s)</p>
 <p><span>Lender: </span><%= @user.first_name %> <%= @user.last_name %></p>
+<%= link_to "Request Loan", new_loan_request_path(params[:id])  %>

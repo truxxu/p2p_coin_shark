@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, only: [:show]
-  resources :loans, only: [:index, :show] do
-    resources :requests, only: [:index, :show]
+  resources :loans, only: [:index, :show, :new, :create] do
+    resources :requests, only: [:index, :show, :new, :create]
   end
 
   get 'users/:id/loans' => 'loans#my_loans', as: :my_loans
