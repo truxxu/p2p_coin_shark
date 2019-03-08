@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, only: [:show]
-  resources :loans, only: [:index, :show] do
+  resources :loans, only: [:index, :show, :new, :create] do
     resources :requests, only: [:index, :show]
   end
 

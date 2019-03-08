@@ -1,0 +1,12 @@
+<h1>Create a new Loan Offer</h1>
+
+<%= simple_form_for(@loan) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :min_amount %>
+  <%= f.input :max_amount %>
+  <%= f.input :interest_rate %>
+  <%= f.input :payment_frequency, collection: Loan::PAYMENT_FREQUENCY %>
+  <%= f.input :payment_period %>
+  <%= f.button :submit, class: "btn-gradient" %>
+<% end %>
