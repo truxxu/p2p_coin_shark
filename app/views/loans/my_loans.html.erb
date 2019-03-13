@@ -9,5 +9,5 @@
   <p><span>Payments: </span><%= loan.payment_frequency %></p>
   <p><span>Lending period: </span> <%= loan.payment_period %> month(s)</p>
   <p><span>Requests: </span><%= @requests.count %></p>
-  <%= link_to "Details", loan_path(loan.id) %>
+  <%= link_to "Details", my_loan_requests_path(loan.id) %>
 <% end %>

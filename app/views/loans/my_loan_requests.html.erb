@@ -1,0 +1,22 @@
+<h1>Requests for "<%= @loan.title %>"</h1>
+<p><%= @loan.description %></p>
+<p><span>Limits: </span>$<%= @loan.min_amount %> - $<%= @loan.max_amount %> USD</p>
+<p><span>Interest: </span><%= @loan.interest_rate %>%</p>
+<p><span>Payments: </span><%= @loan.payment_frequency %></p>
+<p><span>Lending period: </span> <%= @loan.payment_period %> month(s)</p>
+<hr>
+<% @requests.each do |request| %>
+  <p>
+    <span>Requested by: </span>
+    <% @users.each do |user| %>
+      <% if request.user_id == user.id%>
+        <%= user.username %>
+      <% end %>
+    <% end %>
+  </p>
+  <p><span>Requested Amount: </span><%= request.requested_amount %></p>
+  <p><span>Loan Start: </span><%= request.loan_start %></p>
+  <p><span>Loan End: </span><%= request.loan_end %></p>
+  <p><span>Status: </span><%= request.status %></p>
+
+<% end %>

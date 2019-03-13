@@ -8,6 +8,13 @@ class LoansController < ApplicationController
     @requests = Request.where(loan_id: current_user.requests)
   end
 
+  def my_loan_requests
+    @loan = Loan.find(params[:id])
+    @requests = Request.where(loan_id: @loan)
+    # Needs refactoring, shouldn't call all users at once
+    @users = User.all
+  end
+
   def show
     @loan = Loan.find(params[:id])
     @user = User.find(@loan.user_id)
