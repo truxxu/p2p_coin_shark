@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_171516) do
     t.bigint "user_id"
     t.bigint "loan_id"
     t.integer "requested_amount"
-    t.string "status"
+    t.string "status", default: "Pending"
     t.index ["loan_id"], name: "index_requests_on_loan_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_171516) do
     t.float "longitude"
     t.string "photo"
     t.string "username"
-    t.integer "telephone"
+    t.string "telephone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -5,4 +5,5 @@ class Request < ApplicationRecord
   validates :loan_start, presence: true
   validates :loan_end, presence: true
   validates :requested_amount, presence: true, numericality: true
+  validates :status, inclusion: { in: %w(Pending Accepted Rejected) }
 end

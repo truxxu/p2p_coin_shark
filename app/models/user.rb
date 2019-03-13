@@ -17,6 +17,8 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :city, presence: true
   validates :photo, presence: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 5 }
+  validates :telephone, presence: true, uniqueness: true, numericality: true, length: { maximum: 10 }
 
   mount_uploader :photo, PhotoUploader
 

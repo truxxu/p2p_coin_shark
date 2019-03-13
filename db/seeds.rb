@@ -12,12 +12,14 @@ test_user = User.new(
   id_type: "Passport",
   id_number: "123AF234",
   city: "Paris",
-  address: "16 Villa Gaudelet"
+  address: "16 Villa Gaudelet",
+  username: "dftrujillo",
+  telephone: "7625560257"
 )
 
 test_user.remote_photo_url = "https://res.cloudinary.com/truxxu/image/upload/v1551457914/babby.jpg"
 
-test_user.save
+test_user.save!
 
 test_user2 = User.new(
   first_name: "Julián",
@@ -27,12 +29,14 @@ test_user2 = User.new(
   id_type: "Driver's License",
   id_number: "123AF234a",
   city: "Hannover",
-  address: "Gellertstr. 21"
+  address: "Gellertstr. 21",
+  username: "julianpol",
+  telephone: "3006747173"
 )
 
 test_user2.remote_photo_url = "https://res.cloudinary.com/truxxu/image/upload/v1551457914/babby.jpg"
 
-test_user2.save
+test_user2.save!
 
 test_user3 = User.new(
   first_name: "Leonardo",
@@ -42,12 +46,14 @@ test_user3 = User.new(
   id_type: "Passport",
   id_number: "123AF234b",
   city: "Bogota",
-  address: "Cl. 97 #71c 21"
+  address: "Cl. 97 #71c 21",
+  username: "lenieco",
+  telephone: "88763990"
 )
 
 test_user3.remote_photo_url = "https://res.cloudinary.com/truxxu/image/upload/v1551457914/babby.jpg"
 
-test_user3.save
+test_user3.save!
 
 # Loans
 
